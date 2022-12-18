@@ -32,6 +32,9 @@ export default function Home({allPostsData}: any) {
                             </small>
                         </li>
                     ))}
+                    <li className={utilStyles.listItem} key='game-link-li'>
+                        <Link href={`/game/tic-tac-toe`}>Game</Link>
+                    </li>
                 </ul>
             </section>
         </Layout>
