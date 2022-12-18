@@ -5,7 +5,7 @@ import boardStyles from './board.module.css'
 
 export class Board extends React.Component {
     renderSquare(i: any) {
-        return <Square/>;
+        return <Square value={i}/>;
     }
 
     render() {
