@@ -4,8 +4,26 @@ import {Square} from "./square";
 import boardStyles from './board.module.css'
 
 export class Board extends React.Component {
+    constructor(props: any) {
+        super(props);
+        this.state = {
+            squares: Array(9).fill(null),
+        };
+    }
+    
+    handleClick(i: any) {
+        const squares = this.state.squares.slice();
+        squares[i] = 'X';
+        this.setState({squares: squares});
+    }
+
     renderSquare(i: any) {
-        return <Square value={i}/>;
+        return (
+            <Square
+                value={this.state.squares[i]}
+                onClick={() => this.handleClick(i)}
+            />
+        );
     }
 
     render() {
